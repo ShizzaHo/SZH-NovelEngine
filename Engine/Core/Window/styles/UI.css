@@ -1,0 +1,39 @@
+body{
+    background-color: #3c3c3c;
+    margin: 0px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    margin: 0;
+}
+
+.button{
+    width: 58px;
+    height: 58px;
+    background-color: #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button_orange{
+    width: 58px;
+    height: 58px;
+    background-color: #FF9900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button_orange img, .button img{
+    width: 32px;
+    height: 32px;
+}
+
+.button_orange:hover{
+    background-color: #d47f00;
+}

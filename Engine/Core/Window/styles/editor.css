@@ -1,0 +1,106 @@
+.menu{
+    position: fixed;
+    background-color: #262626;
+    height: 100vh;
+    width: 300px;
+    padding: 20px;
+}
+
+.menu li{
+    list-style: none;
+} 
+
+.menu ul{
+    padding: 0px;
+    font-size: 20px;
+    text-decoration: underline;
+    margin: 4px;
+
+    transition: all 200ms ease;
+}
+
+.menu ul:hover{
+    color: #FF9900;
+    cursor: pointer;
+}
+
+
+.menu .selected{
+    text-decoration: none;
+    padding-left: 14px;
+    font-size: 22px;
+    color: #FF9900;
+    cursor: pointer;
+}
+
+.menuFooter{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 14px;
+}
+
+.menuFooter .icon_settings{
+    position: absolute;
+    right: 64px;
+    width: 32px;
+}
+
+.menuFooter .icon_settings:hover{
+    cursor: pointer;
+}
+
+.menuFooter .icon_create{
+    position: absolute;
+    right: 16px;
+    width: 32px;
+}
+
+.menuFooter .icon_create:hover{
+    cursor: pointer;
+}
+
+.content{
+    width: calc(100% - 340px);
+    max-width: calc(100% - 340px);
+    float: right;
+
+    height: 100vh;
+}
+
+.projectWorkspace{
+    
+}
+
+.projectWorkspace .footer{
+    position: relative;
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.footer .name{
+    position: relative;
+    background-color: #262626;
+    height: 58px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 14px;
+}
+
+.icon1{
+    position: absolute;
+    right: 10px;
+    width: 24px;
+}
+
+.icon2{
+    position: absolute;
+    right: 40px;
+    width: 24px;
+}
+
+.icon1:hover, .icon2:hover{
+    cursor: pointer;
+}
