@@ -7,17 +7,19 @@ function createWindow () {
   const mainWindow = new BrowserWindow({
     width: 1000,
     height: 800,
-    autoHideMenuBar: true,
+    autoHideMenuBar: false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
     },
   })
 
+  mainWindow.openDevTools()
+
   // and load the index.html of the app.
   switch (process.argv[2]) {
     case "editor":
-      mainWindow.loadFile(__dirname + "/Engine/Core/Window/editor.html")
+      mainWindow.loadFile(__dirname + "/Editor/editor.html")
       break;
     default:
       mainWindow.loadFile(__dirname + "/_GAME_DIST/game.html")
