@@ -69,7 +69,7 @@
 }
 
 .projectWorkspace{
-    
+    display: none;
 }
 
 .projectWorkspace .footer{
@@ -103,4 +103,13 @@
 
 .icon1:hover, .icon2:hover{
     cursor: pointer;
+}
+
+.selectWorkspace{
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

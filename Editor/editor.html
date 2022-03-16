@@ -14,26 +14,29 @@
 <body>
     <div class="menu">
         <div class="menuFooter">
-            <h1>Проекты</h1>
+            <h1 id="projects"></h1>
             <img class="icon_settings" src="./styles/icons/Settings.svg">
-            <img class="icon_create" src="./styles/icons/Add.svg">
+            <img class="icon_create" onclick="createNewProject()" src="./styles/icons/Add.svg">
         </div>
-        <li id="projectList">
+        <li id="projectList" onclick="selectProject(event)">
             
         </li>
     </div>
     <div class="content">
-        <div class="projectWorkspace">
+        <div class="projectWorkspace" id="workspace">
             <div class="footer">
                 <div class="name">
-                    <span>Название проекта</span>
-                    <img class="icon1" src="./styles/icons/Delete.svg">
+                    <span id="projectName"></span>
+                    <img class="icon1" onmousedown="removeProject(event)" src="./styles/icons/Delete.svg">
                     <img class="icon2" src="./styles/icons/Edit.svg">
                 </div>
                 <div class="button"><img src="./styles/icons/Box.svg"></div>
                 <div class="button"><img src="./styles/icons/Settings.svg"></div>
                 <div class="button_orange"><img src="./styles/icons/Play.svg"></div>
             </div>
+        </div>
+        <div class="selectWorkspace" id="selector">
+            <span id="selectWorkspace"></span>
         </div>
     </div>
 </body>

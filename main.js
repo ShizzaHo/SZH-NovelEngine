@@ -14,7 +14,7 @@ function createWindow () {
     },
   })
 
-  mainWindow.openDevTools()
+  //mainWindow.openDevTools()
 
   // and load the index.html of the app.
   switch (process.argv[2]) {
