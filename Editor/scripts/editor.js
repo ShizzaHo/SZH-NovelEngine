@@ -68,15 +68,21 @@ function setLocalization() {
     }
 
     let names = Object.keys(localizationData);
-    let endLocal = false;
+    let endLocalState = 0;
 
     for (let i = 0; i < names.length; i++) {
         const word = localizationData[names[i]];
 
         if(names[i] == "___endUILocals"){
-            endLocal = true;
-        } else if (names[i] != "_comment" && endLocal == false) {
-            document.getElementById(names[i]).innerText = word;
+            endLocalState = 2;
+        } else if (names[i] == "___stepTwo") {
+            endLocalState = 1;
+        } else if (names[i] != "_comment") {
+            if (endLocalState == 0) {
+                document.getElementById(names[i]).innerText = word;
+            } else if (endLocalState == 1)  {
+                document.getElementById(names[i]).placeholder = word;
+            }
         }
     }
 }
@@ -95,8 +101,16 @@ function selectProject(e) {
 function loadProjectInfo(name) {
     let manifestData = projectManager.getManifest(name);
     let projectName = document.getElementById("projectName");
+    let ManfestVersion = document.getElementById("ManfestVersion");
+    let ManfestDeveloper = document.getElementById("ManfestDeveloper");
+    let ManfestURL = document.getElementById("ManfestURL");
+    let ManfestUserAgreement = document.getElementById("ManfestUserAgreement");
 
-    projectName.innerText = manifestData.name;
+    projectName.value = manifestData.name;
+    ManfestVersion.value = manifestData.version;
+    ManfestDeveloper.value = manifestData.developer;
+    ManfestURL.value = manifestData.devURL;
+    ManfestUserAgreement.value = manifestData.userAgreement;
 }
 
 function removeProject(e){
@@ -113,4 +127,17 @@ function removeProject(e){
         addProjectsToMenu(projectManager.getProjectsList());
 
     }
+}
+
+function editProjectName() {
+    document.getElementById("projectName").focus();
+}
+
+async function changeProjectName() {
+    let newName = document.getElementById("projectName").value;
+
+    projectManager.renameProject(selectedProjectName,newName, function() {
+        selectedProjectName = newName;
+        addProjectsToMenu(projectManager.getProjectsList());
+    });
 }

@@ -26,18 +26,61 @@
         <div class="projectWorkspace" id="workspace">
             <div class="footer">
                 <div class="name">
-                    <span id="projectName"></span>
+                    <input type="text" id="projectName" class="newName" onchange="changeProjectName();">
                     <img class="icon1" onmousedown="removeProject(event)" src="./styles/icons/Delete.svg">
-                    <img class="icon2" src="./styles/icons/Edit.svg">
+                    <img class="icon2" onclick="editProjectName()" src="./styles/icons/Edit.svg">
                 </div>
                 <div class="button"><img src="./styles/icons/Box.svg"></div>
                 <div class="button"><img src="./styles/icons/Settings.svg"></div>
                 <div class="button_orange"><img src="./styles/icons/Play.svg"></div>
+            </div>
+            <div class="workspaceContent">
+                <div class="workspacePanel">
+                    <span id="manifestPanelTitle"></span>
+                    <hr>
+                    <div class="panelContent">
+                        <input type="text" class="inputEditor" id="ManfestVersion" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestDeveloper" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestURL" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestUserAgreement" placeholder="">
+                    </div>
+                </div>
+                <div class="workspacePanel">
+                    <span id="manifestPanelTitle"></span>
+                    <hr>
+                    <div class="panelContent">
+                        <input type="text" class="inputEditor" id="ManfestVersion" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestDeveloper" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestURL" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestUserAgreement" placeholder="">
+                    </div>
+                </div>
+                <div class="workspacePanel">
+                    <span id="manifestPanelTitle"></span>
+                    <hr>
+                    <div class="panelContent">
+                        <input type="text" class="inputEditor" id="ManfestVersion" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestDeveloper" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestURL" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestUserAgreement" placeholder="">
+                    </div>
+                </div>
+                <div class="workspacePanel">
+                    <span id="manifestPanelTitle"></span>
+                    <hr>
+                    <div class="panelContent">
+                        <input type="text" class="inputEditor" id="ManfestVersion" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestDeveloper" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestURL" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestUserAgreement" placeholder="">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="selectWorkspace" id="selector">
             <span id="selectWorkspace"></span>
         </div>
     </div>
+
 </body>
 </html>

@@ -113,3 +113,44 @@
     justify-content: center;
     align-items: center;
 }
+
+.newName{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    user-select: all;
+}
+
+.workspaceContent{
+    padding: 8px;
+    position: relative;
+}
+
+.workspacePanel {
+    background-color: #262626;
+    width: calc(100% - 8px);
+    max-width: 100%;
+    padding: 4px;
+    padding-top: 8px;
+    margin-bottom: 10px;
+}
+
+.workspacePanel #manifestPanelTitle{
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.workspacePanel hr{
+    width: calc(100% - 25px);
+    border-color: #9c9c9c;
+}
+
+.workspacePanel .panelContent{
+    height: auto;
+    padding-left: 12px;
+    padding-right: 20px;
+}
