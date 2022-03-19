@@ -53,3 +53,26 @@ h1{
     padding: 8px;
     margin-bottom: 8px;
 }
+
+.inputEditor:hover, .inputEditor:focus{
+    border-color: #6e6e6e;
+}
+
+.panelButton{
+    outline: none;
+    background-color: #262626;
+    border: solid;
+    border-color: #3c3c3c;
+    color: white;
+    padding: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.panelButton:hover{
+    border-color: #6e6e6e;
+}
+
+.fullButton{
+    width: calc(100% + 10px);
+}

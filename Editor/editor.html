@@ -36,43 +36,24 @@
             </div>
             <div class="workspaceContent">
                 <div class="workspacePanel">
-                    <span id="manifestPanelTitle"></span>
+                    <span class="title" id="manifestPanelTitle"></span>
                     <hr>
                     <div class="panelContent">
-                        <input type="text" class="inputEditor" id="ManfestVersion" placeholder="">
-                        <input type="text" class="inputEditor" id="ManfestDeveloper" placeholder="">
-                        <input type="text" class="inputEditor" id="ManfestURL" placeholder="">
-                        <input type="text" class="inputEditor" id="ManfestUserAgreement" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestVersion" onchange="manifestEdit()" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestDeveloper" onchange="manifestEdit()" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestURL" onchange="manifestEdit()" placeholder="">
+                        <input type="text" class="inputEditor" id="ManfestUserAgreement" onchange="manifestEdit()" placeholder="">
                     </div>
                 </div>
+
                 <div class="workspacePanel">
-                    <span id="manifestPanelTitle"></span>
+                    <span class="title" id="resoursesPanelTitle"></span>
                     <hr>
                     <div class="panelContent">
-                        <input type="text" class="inputEditor" id="ManfestVersion" placeholder="">
-                        <input type="text" class="inputEditor" id="ManfestDeveloper" placeholder="">
-                        <input type="text" class="inputEditor" id="ManfestURL" placeholder="">
-                        <input type="text" class="inputEditor" id="ManfestUserAgreement" placeholder="">
-                    </div>
-                </div>
-                <div class="workspacePanel">
-                    <span id="manifestPanelTitle"></span>
-                    <hr>
-                    <div class="panelContent">
-                        <input type="text" class="inputEditor" id="ManfestVersion" placeholder="">
-                        <input type="text" class="inputEditor" id="ManfestDeveloper" placeholder="">
-                        <input type="text" class="inputEditor" id="ManfestURL" placeholder="">
-                        <input type="text" class="inputEditor" id="ManfestUserAgreement" placeholder="">
-                    </div>
-                </div>
-                <div class="workspacePanel">
-                    <span id="manifestPanelTitle"></span>
-                    <hr>
-                    <div class="panelContent">
-                        <input type="text" class="inputEditor" id="ManfestVersion" placeholder="">
-                        <input type="text" class="inputEditor" id="ManfestDeveloper" placeholder="">
-                        <input type="text" class="inputEditor" id="ManfestURL" placeholder="">
-                        <input type="text" class="inputEditor" id="ManfestUserAgreement" placeholder="">
+                        <button class="panelButton fullButton" id="projectOpenButton" onclick="openProjectFolder()"></button>
+                        <button class="panelButton fullButton" id="resoursesOpenButton" onclick="openResoursesFolder()"></button>
+                        <button class="panelButton fullButton" id="scriptsOpenButton" onclick="openScriptsFolder()"></button>
+                        <button class="panelButton fullButton" id="configsOpenButton" onclick="openConfigsFolder()"></button>
                     </div>
                 </div>
             </div>

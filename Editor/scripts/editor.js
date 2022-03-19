@@ -141,3 +141,35 @@ async function changeProjectName() {
         addProjectsToMenu(projectManager.getProjectsList());
     });
 }
+
+function manifestEdit() {
+    let manifestData = projectManager.getManifest(selectedProjectName);
+
+    let ManfestVersion = document.getElementById("ManfestVersion");
+    let ManfestDeveloper = document.getElementById("ManfestDeveloper");
+    let ManfestURL = document.getElementById("ManfestURL");
+    let ManfestUserAgreement = document.getElementById("ManfestUserAgreement");
+
+    manifestData.version = ManfestVersion.value;
+    manifestData.developer = ManfestDeveloper.value;
+    manifestData.devURL = ManfestURL.value;
+    manifestData.userAgreement = ManfestUserAgreement.value;
+
+    projectManager.saveManifest(selectedProjectName, manifestData);
+}
+
+function openResoursesFolder() {
+    require('child_process').exec('start "" "'+config.workDir+"/projects/"+selectedProjectName+"/resourses/"+'"');
+}
+
+function openProjectFolder() {
+    require('child_process').exec('start "" "'+config.workDir+"/projects/"+selectedProjectName+'"');
+}
+
+function openScriptsFolder() {
+    require('child_process').exec('start "" "'+config.workDir+"/projects/"+selectedProjectName+"/scripts/"+'"');
+}
+
+function openConfigsFolder() {
+    require('child_process').exec('start "" "'+config.workDir+"/projects/"+selectedProjectName+"/configs/"+'"');
+}

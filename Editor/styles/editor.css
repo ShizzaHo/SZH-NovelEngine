@@ -15,20 +15,9 @@
     font-size: 20px;
     text-decoration: underline;
     margin: 4px;
-
-    transition: all 200ms ease;
 }
 
 .menu ul:hover{
-    color: #FF9900;
-    cursor: pointer;
-}
-
-
-.menu .selected{
-    text-decoration: none;
-    padding-left: 14px;
-    font-size: 22px;
     color: #FF9900;
     cursor: pointer;
 }
@@ -138,10 +127,14 @@
     margin-bottom: 10px;
 }
 
-.workspacePanel #manifestPanelTitle{
+.workspacePanel .title{
     margin: 10px;
     font-size: 30px;
     font-weight: 500;
+}
+
+.workspacePanel a, .workspacePanel a:visited{
+    color: white;
 }
 
 .workspacePanel hr{
