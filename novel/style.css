@@ -1,0 +1,55 @@
+:root{
+    --dialogPanelBackgroundColor: rgba(0, 0, 0, 0.7);
+    --dialogPanelTextColor: white;
+    --dialogPanelTextColorSelected: rgb(255, 174, 0);
+    --dialogPanelNameTextSize: 20px;
+    --dialogPanelDialogTextSize: 20px;
+}
+
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+.dialogPanel{
+    background-color: var(--dialogPanelBackgroundColor);
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    color: var(--dialogPanelTextColor);
+}
+
+#characterName{ 
+    font-size: var(--dialogPanelNameTextSize);
+    margin: 14px;
+    font-weight: 700;
+}
+
+#dialogText{
+    font-size: var(--dialogPanelDialogTextSize);
+    margin: 14px;
+}
+
+.tools{
+    display: flex;
+    height: 30px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.tools li{
+    list-style-type: none;
+}
+
+.tools ul{
+    padding: 0;
+    margin: 0;
+    display:inline-block;
+    text-decoration: underline;
+}
+
+.tools ul:hover{
+    color: var(--dialogPanelTextColorSelected);
+}
