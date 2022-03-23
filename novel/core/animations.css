@@ -1,0 +1,91 @@
+:root{
+    --animationTimes: 0ms;
+}
+
+.fadeIn{
+    animation:fade var(--animationTimes) cubic-bezier(.39,.575,.565,1.000) both
+}
+
+.fadeOut{
+    animation:fade var(--animationTimes) cubic-bezier(.39,.575,.565,1.000) reverse both
+}
+
+.roll{
+    animation: roll var(--animationTimes) cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.roll2{
+    animation: roll2 var(--animationTimes) cubic-bezier(0.230, 1.000, 0.320, 1.000) reverse both;
+}
+
+.tilt{
+    animation: tilt var(--animationTimes) cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.flipScale{
+    animation: flipScale var(--animationTimes) linear reverse both;
+}
+
+@keyframes fade{
+    0%{opacity:0}100%{opacity:1}
+}
+
+@keyframes roll {
+    0% {
+        -webkit-transform: translateX(-1000px) rotate(-720deg);
+                transform: translateX(-1000px) rotate(-720deg);
+        -webkit-filter: blur(50px);
+                filter: blur(50px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-transform: translateX(0) rotate(0deg);
+                transform: translateX(0) rotate(0deg);
+        -webkit-filter: blur(0);
+                filter: blur(0);
+        opacity: 1;
+      }
+}
+
+@keyframes roll2 {
+    0% {
+        -webkit-transform: translateX(1000px) rotate(720deg);
+                transform: translateX(1000px) rotate(720deg);
+        -webkit-filter: blur(50px);
+                filter: blur(50px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-transform: translateX(0) rotate(0deg);
+                transform: translateX(0) rotate(0deg);
+        -webkit-filter: blur(0);
+                filter: blur(0);
+        opacity: 1;
+      }
+}
+
+@keyframes tilt {
+    0% {
+        -webkit-transform: rotateY(20deg) rotateX(35deg) translate(300px, -300px) skew(-35deg, 10deg);
+                transform: rotateY(20deg) rotateX(35deg) translate(300px, -300px) skew(-35deg, 10deg);
+        opacity: 0;
+      }
+      100% {
+        -webkit-transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+                transform: rotateY(0) rotateX(0deg) translate(0, 0) skew(0deg, 0deg);
+        opacity: 1;
+      }
+}
+
+@keyframes flipScale {
+    0% {
+      transform: scale(1) rotateX(0);
+    }
+    50% {
+      transform: scale(2.5) rotateX(-90deg);
+    }
+    100% {
+      transform: scale(1) rotateX(-180deg);
+    }
+  }
+  

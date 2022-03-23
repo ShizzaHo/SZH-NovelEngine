@@ -4,18 +4,46 @@
     --dialogPanelTextColorSelected: rgb(255, 174, 0);
     --dialogPanelNameTextSize: 20px;
     --dialogPanelDialogTextSize: 20px;
+
+    --backgroundScene: url("");
+    --backgroundSceneOld: url("");
 }
 
 body{
     margin: 0;
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
+    user-select: none;
+    background: black;
+}
+
+.background_old{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    animation: none;
+
+    background: var(--backgroundSceneOld) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.background_new{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    animation: none;
+
+    background: black var(--backgroundScene) no-repeat center center fixed;
+    background-size: cover;
 }
 
 .dialogPanel{
     background-color: var(--dialogPanelBackgroundColor);
     position: absolute;
     bottom: 0;
+    min-height: 120px;
     width: 100vw;
     color: var(--dialogPanelTextColor);
 }
@@ -29,6 +57,7 @@ body{
 #dialogText{
     font-size: var(--dialogPanelDialogTextSize);
     margin: 14px;
+    min-height: var(--dialogPanelDialogTextSize);
 }
 
 .tools{
@@ -52,4 +81,5 @@ body{
 
 .tools ul:hover{
     color: var(--dialogPanelTextColorSelected);
+    cursor: pointer;
 }

@@ -106,6 +106,9 @@ class EditScene{
             case "textSpeed":
                 textSpeed = this.change;
                 break;
+            case "animationSpeed":
+                document.documentElement.style.setProperty("--animationTimes", this.change+"ms");
+                break;
             default:
                 break;
         }
@@ -133,6 +136,60 @@ class RunMethod{
         scenarioNext();
     }
 }
+class SetBackground{
+    path;
+    anim;
+
+    constructor(path, anim){
+        this.path = path;
+        this.anim = anim;
+    }
+
+    start(){
+        SelectedScene.scenarioState = State.execution;
+
+        let newBg = document.getElementById("bgNew");
+        let oldBg = document.getElementById("bgOld");
+        let oldest = document.documentElement.style.getPropertyValue("--backgroundScene");
+        let activeNew;
+        let activeOld;
+        let animationTime = document.documentElement.style.getPropertyValue("--animationTimes").replace(/[^0-9]/g,"")
+        
+        document.documentElement.style.setProperty("--backgroundSceneOld", ""+oldest+"");
+        document.documentElement.style.setProperty("--backgroundScene", "url("+this.path+")");
+
+        switch (this.anim) {
+            case "roll":
+                activeNew = "roll";
+                activeOld = "roll2";
+                break;
+            case "tilt":
+                activeNew = "tilt";
+                break;
+            case "fade":
+                activeNew = "fadeIn";
+                activeOld = "fandeOut";
+                break;
+            case "flipScale":
+                activeNew = "flipScale";
+                break;
+            default:
+                break;
+        }
+
+        newBg.classList.add(activeNew);
+        oldBg.classList.add(activeOld);
+
+        setTimeout(() =>{
+            newBg.classList.remove(activeNew);
+            oldBg.classList.remove(activeOld);
+        },animationTime);
+
+        SelectedScene.scenarioState = State.wait;
+        _scenarioPosition++;
+        scenarioNext();
+    }
+}
 
 //#endregion
 
@@ -153,6 +210,14 @@ class Scene {
 
     edit(type, change){
         _scenarioList.push(new EditScene(this, type, change));
+    }
+
+    setBackground(path){
+        _scenarioList.push(new SetBackground(path, "none"));
+    }
+
+    setBackground(path, anim){
+        _scenarioList.push(new SetBackground(path, anim));
     }
 }
 
@@ -190,3 +255,9 @@ function scenarioNext() {
 }
 
 //#endregion
+
+window.onload = () => { 
+    document.documentElement.style.setProperty("--animationTimes", "1000ms");
+    _scenarioPosition++;
+    scenarioNext() 
+}
