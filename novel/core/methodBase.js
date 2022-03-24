@@ -191,6 +191,37 @@ class SetBackground{
     }
 }
 
+class AudioRes{
+    audio;
+    method;
+
+    constructor(audio, method){
+        this.audio = audio;
+        this.method = method;
+    }
+
+    start(){
+        SelectedScene.scenarioState = State.execution;
+
+        switch (this.method) {
+            case "play":
+                this.audio.audioObject.src = this.audio.path;
+                this.audio.audioObject.volume = this.audio.volume;
+                this.audio.audioObject.play();
+                break;
+            case "pause":
+                this.audio.audioObject.pause();
+                break;
+            default:
+                break;
+        }
+
+        SelectedScene.scenarioState = State.wait;
+        _scenarioPosition++;
+        scenarioNext();
+    }
+}
+
 //#endregion
 
 //#endregion
@@ -237,6 +268,32 @@ class Character {
     edit(type, change){
         _scenarioList.push(new EditCharacter(this, type, change));
     }
+}
+
+class Audio {
+    path;
+    audioID;
+    audioObject;
+    volume;
+
+    constructor(path, volume){
+        this.path = path;
+        this.audioID = "AUDIO_" + Math.random() * (1000 - 0);
+        this.volume = volume;
+        let aud = document.createElement("audio");
+        aud.id= this.audioID;
+        document.body.appendChild(aud);
+        this.audioObject = document.getElementById(this.audioID);
+    }
+
+    play(){
+        _scenarioList.push(new AudioRes(this,"play"));
+    }
+
+    pause(){
+        _scenarioList.push(new AudioRes(this,"pause"));
+    }
+
 }
 
 //#region 

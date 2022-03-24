@@ -34,8 +34,8 @@
     0% {
         -webkit-transform: translateX(-1000px) rotate(-720deg);
                 transform: translateX(-1000px) rotate(-720deg);
-        -webkit-filter: blur(50px);
-                filter: blur(50px);
+        -webkit-filter: blur(10px);
+                filter: blur(10px);
         opacity: 0;
       }
       100% {
@@ -51,8 +51,8 @@
     0% {
         -webkit-transform: translateX(1000px) rotate(720deg);
                 transform: translateX(1000px) rotate(720deg);
-        -webkit-filter: blur(50px);
-                filter: blur(50px);
+        -webkit-filter: blur(10px);
+                filter: blur(10px);
         opacity: 0;
       }
       100% {
@@ -87,5 +87,5 @@
     100% {
       transform: scale(1) rotateX(-180deg);
     }
-  }
+}
   
