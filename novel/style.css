@@ -83,3 +83,16 @@ body{
     color: var(--dialogPanelTextColorSelected);
     cursor: pointer;
 }
+
+.scenarioElements{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.scenarioElements .defaultSprite{
+    position: absolute;
+    bottom: 0;
+    width: auto;
+    height: 90vh;
+}

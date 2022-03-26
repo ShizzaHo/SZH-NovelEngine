@@ -78,6 +78,9 @@ class EditCharacter{
             case "name":
                 this.character.name = this.change;
                 break;
+            case "sprite":
+                this.character.spriteElement.src = this.change;
+                break;
             default:
                 break;
         }
@@ -256,9 +259,22 @@ class Character {
     name;
     nameColor;
 
-    constructor(name, color){
+    spriteFolder;
+    spriteElement;
+    spriteElement;
+    spriteElementID;
+
+    constructor(name, color, spriteFolder){
         this.name = name;
         this.nameColor = color;
+        this.spriteFolder = spriteFolder;
+        this.spriteElementID = "SPRITE_" + Math.random() * (1000 - 0);
+
+        let sprite = document.createElement("img");
+        sprite.id = this.spriteElementID;
+        sprite.classList.add("defaultSprite");
+        document.getElementById("scenarioElements").appendChild(sprite);
+        this.spriteElement = document.getElementById(this.spriteElementID);
     }
 
     say(text){
@@ -267,6 +283,22 @@ class Character {
 
     edit(type, change){
         _scenarioList.push(new EditCharacter(this, type, change));
+    }
+
+    setSprite(name, special){
+        if(special == "undefined"){
+            _scenarioList.push(new EditCharacter(this, "sprite", this.spriteFolder+"/"+name+"."+special));
+        } else {
+            _scenarioList.push(new EditCharacter(this, "sprite", this.spriteFolder+"/"+name+".png"));
+        }
+    }
+
+    spriteSettings(type, change){
+        if(special == "undefined"){
+            _scenarioList.push(new EditCharacter(this, "sprite", this.spriteFolder+"/"+name+"."+special));
+        } else {
+            _scenarioList.push(new EditCharacter(this, "sprite", this.spriteFolder+"/"+name+".png"));
+        }
     }
 }
 
