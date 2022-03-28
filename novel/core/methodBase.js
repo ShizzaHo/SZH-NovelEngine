@@ -81,6 +81,26 @@ class EditCharacter{
             case "sprite":
                 this.character.spriteElement.src = this.change;
                 break;
+            case "edit_width":
+                this.character.spriteElement.style.width = this.change;
+                break;
+            case "edit_height":
+                this.character.spriteElement.style.height = this.change;
+                break;
+            case "edit_position":
+                this.character.spriteElement.style.top = this.change.y;
+                this.character.spriteElement.style.left = this.change.x;
+                break;
+            case "edit_miror":
+                if(this.change === true){
+                    this.character.spriteElement.style.transform = "scale(-1, 1)"
+                } else {
+                    this.character.spriteElement.style.transform = "scale(1, 1)"
+                }
+                break;
+            case "edit_animationEffect":
+                this.character.spriteElement.classList.add(this.change);
+                break;
             default:
                 break;
         }
@@ -294,11 +314,7 @@ class Character {
     }
 
     spriteSettings(type, change){
-        if(special == "undefined"){
-            _scenarioList.push(new EditCharacter(this, "sprite", this.spriteFolder+"/"+name+"."+special));
-        } else {
-            _scenarioList.push(new EditCharacter(this, "sprite", this.spriteFolder+"/"+name+".png"));
-        }
+        _scenarioList.push(new EditCharacter(this, "edit_"+type, change));
     }
 }
 

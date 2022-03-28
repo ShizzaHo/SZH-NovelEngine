@@ -88,4 +88,10 @@
       transform: scale(1) rotateX(-180deg);
     }
 }
+
+/* */
+
+.characterFade{
+  transition: all var(--animationTimes);
+}
   
